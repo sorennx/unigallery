@@ -56,4 +56,8 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl+'countries/')
   }
 
+  getUniversityList(): Observable<any[]>{
+    return this.http.get<any[]>(this.APIUrl+'universities/')
+  }
+
 }

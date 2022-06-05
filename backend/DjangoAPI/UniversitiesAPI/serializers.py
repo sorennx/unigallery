@@ -22,12 +22,15 @@ class CitySerializer(serializers.ModelSerializer):
         model = City
         fields = ('CityId',
                   'CityName',
-                  'RegionId')
+                  'RegionId',)
 
 
 class UniversitySerializer(serializers.ModelSerializer):
+    cities = CitySerializer(many=True, read_only=True)
     class Meta:
         model = University
         fields = ('UniversityId',
                   'UniversityName',
-                  'CityId')
+                  'CityId',
+                  'cities',
+                  )

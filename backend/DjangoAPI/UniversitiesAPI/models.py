@@ -20,4 +20,4 @@ class City(models.Model):
 class University(models.Model):
     UniversityId = models.AutoField(primary_key=True)
     UniversityName = models.CharField(max_length=150)
-    CityId = models.ForeignKey(City,on_delete=models.CASCADE)
+    CityId = models.ForeignKey(City,related_name='cities', on_delete=models.CASCADE)

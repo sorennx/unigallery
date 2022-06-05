@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^', include('UniversitiesAPI.urls')),
     re_path(r'^',include('EmployeeApp.urls')),
+    path('__debug__/', include('debug_toolbar.urls')),
     
 ]

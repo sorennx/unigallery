@@ -1,0 +1,22 @@
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <td>University name</td>
+            <td>City name</td>
+            <td>Region name</td>
+            <td>Country name</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let dataItem of universityList">
+            <!-- angular directive for a loop. loops through the list of countries and displays them in a table-->
+            <td>{{ dataItem.UniversityName }}</td>
+            <td>{{ dataItem.CityId__CityName }}</td>
+            <td>{{ dataItem.CityId__RegionId__RegionName }}</td>
+            <td>{{ dataItem.CityId__RegionId__CountryId__CountryName }}</td>
+        </tr>
+    </tbody>
+
+</table>
