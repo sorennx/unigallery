@@ -13,6 +13,8 @@ export class ShowCountryComponent implements OnInit {
   countryList: any = []; // the list of countries
 
 
+
+
   ngOnInit(): void {
     this.getCountryList();
   }
@@ -23,5 +25,7 @@ export class ShowCountryComponent implements OnInit {
     });
     console.log(this.countryList);
   }
+
+  
 
 }

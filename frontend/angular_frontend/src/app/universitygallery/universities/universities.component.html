@@ -2,10 +2,20 @@
 
     <thead>
         <tr>
-            <td>University name</td>
+            <td>
+                <div class="d-flex flex-row">
+                    <input [(ngModel)] = "UniversityNameFilter" class="form-control"
+                    (keyup)="FilterFn()" placeholder="University name">
+                </div>
+                University name</td>
             <td>City name</td>
             <td>Region name</td>
-            <td>Country name</td>
+            <td>
+                <div class="d-flex flex-row">
+                    <input [(ngModel)] = "CountryNameFilter" class="form-control"
+                    (keyup)="FilterFn()" placeholder="Country name">
+                </div>
+                Country name</td>
         </tr>
     </thead>
 

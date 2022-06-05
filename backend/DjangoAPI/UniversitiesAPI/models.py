@@ -21,3 +21,10 @@ class University(models.Model):
     UniversityId = models.AutoField(primary_key=True)
     UniversityName = models.CharField(max_length=150)
     CityId = models.ForeignKey(City,related_name='cities', on_delete=models.CASCADE)
+
+    UniversityGeneralDescription = models.CharField(max_length=3000)
+    UniversityLogoLink = models.CharField(max_length=200)
+    UniversityMainPageLink = models.CharField(max_length=200)
+    UniversityCoursesLink = models.CharField(max_length=200)
+    UniversityContactInfo = models.CharField(max_length=1000)
+    
