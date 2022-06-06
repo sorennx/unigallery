@@ -12,12 +12,12 @@
 
     <label class="col-sd-2 col-form-label">University General Description</label>
     <div class="col-sm-10">
-        <textarea class="form-control" [(ngModel)]="UniversityGeneralDescription" placeholder="Enter University General Description"> </textarea>
+        <textarea class="form-control" maxlength="3000" [(ngModel)]="UniversityGeneralDescription" placeholder="Enter University General Description"> </textarea>
     </div>
 
     <label class="col-sd-2 col-form-label">University Contact Info </label>
     <div class="col-sm-10">
-        <textarea class="form-control" [(ngModel)]="UniversityContactInfo" placeholder="Enter University Name"> </textarea>
+        <textarea class="form-control" maxlength="1000" [(ngModel)]="UniversityContactInfo" placeholder="Enter University Name"> </textarea>
     </div>
 
     <label class="col-sd-2 col-form-label">University Logo Link</label>
@@ -34,9 +34,33 @@
     <div class="col-sm-10">
         <input type="text" class="form-control" [(ngModel)]="UniversityCoursesLink" placeholder="Enter University Name">
     </div>
+
+
+    <label class="col-sd-2 col-form-label">Country</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="Country" (change)="onCountrySelect()">
+            <option value="">--Select--</option>
+            <option *ngFor="let dataItem of CountryList" [ngValue]="dataItem.CountryId" >{{dataItem.CountryName}}</option>
+        </select>
+    </div>
+    <label class="col-sd-2 col-form-label">Region</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="Region" (change)="onRegionSelect()">
+            <option value="" selected disabled hidden>--Select--</option>
+            <option *ngFor="let dataItem of RegionList" [ngValue]="dataItem.RegionId">{{dataItem.RegionName}}</option>
+        </select>
+    </div>
+    <label class="col-sd-2 col-form-label">City</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="City" (change)="test()">
+            <option value="" selected disabled hidden>--Select--</option>
+            <option *ngFor="let dataItem of CityList" [ngValue]="dataItem.RegionId">{{dataItem.CityName}}</option>
+        </select>
+    </div>
+    
     <br>&nbsp;
     <hr>
     <button (click)="addUniversity()" class="btn btn-primary">Add University</button>
 
-
+    
 </div>
