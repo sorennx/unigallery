@@ -59,5 +59,8 @@ export class SharedService {
   getUniversityList(): Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'universities/')
   }
+  addUniversity(val:any){
+    return this.http.post(this.APIUrl + 'universities/',val);
+  }
 
 }

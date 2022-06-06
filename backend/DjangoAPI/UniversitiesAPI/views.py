@@ -97,3 +97,10 @@ def universityGalleryApi(request):
         data = list(universities.values('UniversityName','CityId__CityName','CityId__RegionId__RegionName','CityId__RegionId__CountryId__CountryName'))
         # universities_serializer = UniversitySerializer(universities, many=True)
         return JsonResponse(data, safe=False)
+    elif request.method == 'POST':
+        university_data = JSONParser().parse(request)
+        universities_serializer = UniversitySerializer(data=university_data)
+        if universities_serializer.is_valid():
+            universities_serializer.save()
+            return JsonResponse(f"University {university_data['UniversityName']} added successfully.", safe=False)
+        return JsonResponse("Failed to add university.", safe=False)

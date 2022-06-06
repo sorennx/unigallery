@@ -17,6 +17,8 @@ import { HomeComponent } from './universitygallery/home/home.component';
 import { AboutComponent } from './universitygallery/about/about.component';
 import { ContactComponent } from './universitygallery/contact/contact.component';
 import { UniversitiesComponent } from './universitygallery/universities/universities.component';
+import { AddUniComponent } from './universitygallery/contact/add-uni/add-uni.component';
+
 
 
 
@@ -32,6 +34,7 @@ import { UniversitiesComponent } from './universitygallery/universities/universi
     AboutComponent,
     ContactComponent,
     UniversitiesComponent,
+    AddUniComponent,
   ],
   imports: [
     BrowserModule,

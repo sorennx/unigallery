@@ -26,11 +26,15 @@ class CitySerializer(serializers.ModelSerializer):
 
 
 class UniversitySerializer(serializers.ModelSerializer):
-    cities = CitySerializer(many=True, read_only=True)
+    
     class Meta:
         model = University
         fields = ('UniversityId',
                   'UniversityName',
                   'CityId',
-                  'cities',
+                  'UniversityGeneralDescription',
+                  'UniversityLogoLink',
+                  'UniversityMainPageLink',
+                  'UniversityCoursesLink',
+                  'UniversityContactInfo'
                   )
