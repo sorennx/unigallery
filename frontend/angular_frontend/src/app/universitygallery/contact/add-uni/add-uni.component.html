@@ -47,14 +47,14 @@
     <div class="col-sm-10">
         <select class="form-control" [(ngModel)]="Region" (change)="onRegionSelect()">
             <option value="" selected disabled hidden>--Select--</option>
-            <option *ngFor="let dataItem of RegionList" [ngValue]="dataItem.RegionId">{{dataItem.RegionName}}</option>
+            <option *ngFor="let dataItem of RegionListFiltered" [ngValue]="dataItem.RegionId">{{dataItem.RegionName}}</option>
         </select>
     </div>
     <label class="col-sd-2 col-form-label">City</label>
     <div class="col-sm-10">
         <select class="form-control" [(ngModel)]="City" (change)="test()">
             <option value="" selected disabled hidden>--Select--</option>
-            <option *ngFor="let dataItem of CityList" [ngValue]="dataItem.RegionId">{{dataItem.CityName}}</option>
+            <option *ngFor="let dataItem of CityListFiltered" [ngValue]="dataItem.RegionId">{{dataItem.CityName}}</option>
         </select>
     </div>
     

@@ -7,6 +7,7 @@ import { SharedService } from 'src/app/shared.service';
   styleUrls: ['./add-uni.component.css']
 })
 export class AddUniComponent implements OnInit {
+  
 
   constructor(private service: SharedService) { }
 
@@ -25,9 +26,11 @@ export class AddUniComponent implements OnInit {
   Region: string = '';
   RegionList: any =[];
   RegionListNotFiltered: any =[];
+  RegionListFiltered: any =[];
   City: string = '';
   CityList: any =[];
   CityListNotFiltered: any =[];
+  CityListFiltered: any=[];
 
   ngOnInit(): void {
     this.getCountryList();
@@ -55,13 +58,16 @@ export class AddUniComponent implements OnInit {
     this.service.getCountryList().subscribe(data => {
       this.CountryList = data;
       this.CountryListNotFiltered = data;
+      
     });
+    return 0;
   }
 
   getRegionList(){
     this.service.getRegionList().subscribe(data => {
       this.RegionList = data;
       this.RegionListNotFiltered = data;
+      console.log("2",this.RegionList);
     });
   }
 
@@ -71,23 +77,43 @@ export class AddUniComponent implements OnInit {
       this.CityListNotFiltered = data;
     });
   }
-
-  onCountrySelect(){
-    console.log("Country selection made");
+  delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
+  async onCountrySelect(){
+    console.log("1");
     this.getRegionList();
+    await this.delay(50);
+    
+    console.log("3", this.RegionList);
+
+    var regionsFiltered = this.RegionListNotFiltered.filter( (el: { CountryId: number; }) =>{
+      return el.CountryId == parseInt(this.Country);
+    });
+    this.RegionListFiltered = regionsFiltered;
+    console.log('after filtering: ',this.RegionList);
   }
 
-  onRegionSelect(){
+  async onRegionSelect(){
     console.log("Region selection made");
     this.getCityList();
+    await this.delay(50);
+
+    var citiesFiltered = this.CityListNotFiltered.filter( (el: { RegionId: number; }) =>{
+      return el.RegionId == parseInt(this.Region);
+    });
+    this.CityListFiltered = citiesFiltered;
+    console.log('after filtering: ',this.CityList);
   }
 
+  
+  
   test(){
-    console.log(">>>Test",this.Country,this.Region,this.City);
-    for (var country of this.CountryListNotFiltered){
-        if (country.CountryName == this.Country){
-          console.log("TRUE")
-        }
-    }
+    console.log(">>>Test",parseInt(this.Country),parseInt(this.Region),parseInt(this.City));
+    
+
+    
+    
+
   }
 }
