@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShowCountryComponent } from './show-country.component';
+import { AddOtherDataComponent } from './add-other-data.component';
 
-describe('ShowCountryComponent', () => {
-  let component: ShowCountryComponent;
-  let fixture: ComponentFixture<ShowCountryComponent>;
+describe('AddOtherDataComponent', () => {
+  let component: AddOtherDataComponent;
+  let fixture: ComponentFixture<AddOtherDataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShowCountryComponent ]
+      declarations: [ AddOtherDataComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShowCountryComponent);
+    fixture = TestBed.createComponent(AddOtherDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

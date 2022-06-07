@@ -1,0 +1,17 @@
+<label class="col-sm-2 col-form-label">Add Region</label>
+<div class="form-group row">
+    <label class="col-sd-2 col-form-label">Select country</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="Country">
+            <option value="">--Select--</option>
+            <option *ngFor="let dataItem of CountryList" [ngValue]="dataItem.CountryId">{{dataItem.CountryName}}
+            </option>
+        </select>
+    </div>
+
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="RegionName" placeholder="Enter region name">
+
+        <button type="button" class="btn btn-primary-outline" (click)="addRegion()">
+            Add region</button>
+    </div>

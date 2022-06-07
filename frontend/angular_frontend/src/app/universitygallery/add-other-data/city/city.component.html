@@ -1,0 +1,23 @@
+<label class="col-sd-2 col-form-label">Country</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="Country" (change)="onCountrySelect()">
+            <option value="">--Select--</option>
+            <option *ngFor="let dataItem of CountryList" [ngValue]="dataItem.CountryId" >{{dataItem.CountryName}}</option>
+        </select>
+    </div>
+    <label class="col-sd-2 col-form-label">Region</label>
+    <div class="col-sm-10">
+        <select class="form-control" [(ngModel)]="Region">
+            <option value="" selected disabled hidden>--Select--</option>
+            <option *ngFor="let dataItem of RegionListFiltered" [ngValue]="dataItem.RegionId">{{dataItem.RegionName}}</option>
+        </select>
+    </div>
+
+<label class="col-sm-2 col-form-label">Add city</label>
+<div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="CityName" placeholder="Enter city name">
+
+
+    <button type="button" class="btn btn-primary-outline" (click)="addCity()">
+        Add city</button>
+</div>

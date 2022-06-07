@@ -81,7 +81,7 @@ export class AddUniComponent implements OnInit {
   }
   async onCountrySelect() {
     this.getRegionList();
-    await this.delay(50);
+    await this.delay(100);
 
     var regionsFiltered = this.RegionListNotFiltered.filter((el: { CountryId: number; }) => {
       return el.CountryId == parseInt(this.Country);
@@ -91,7 +91,7 @@ export class AddUniComponent implements OnInit {
 
   async onRegionSelect() {
     this.getCityList();
-    await this.delay(50);
+    await this.delay(100);
 
     var citiesFiltered = this.CityListNotFiltered.filter((el: { RegionId: number; }) => {
       return el.RegionId == parseInt(this.Region);

@@ -1,22 +1,39 @@
-<div class="container">
-
-  <nav class="navbar navbar-expand-sm bg-light navbar-dark ">
-    <ul class="navbar-nav navbar-right">
-      <li class="nav-item">
-        <button routerLink="home" class="m-1 btn btn-light btn-outline-primary" >Home</button>
-      </li>
-      <li class="nav-item">
-        <button routerLink="universities" class="m-1 btn btn-light btn-outline-primary" >Universities</button>
-      </li>
-      <li class="nav-item">
-        <button routerLink="about" class="m-1 btn btn-light btn-outline-primary" >About</button>
-      </li>
-      <li class="nav-item">
-        <button routerLink="contact" class="m-1 btn btn-light btn-outline-primary" >Contact</button>
-      </li>
-    </ul>
+<body>
+  <nav class="navbar navbar-dark sticky-top navbar-expand-sm bg-dark ">
+    <a routerLink="home" class="navbar-brand">Unigal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuItems"
+      aria-controls="menuItems" aria-expanded="false" aria-label="Toggle Navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuItems">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a routerLink="home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="universities" class="nav-link">Universities</a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="about" class="nav-link">About</a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="contact" class="nav-link">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="fakle">Add other data</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li> <a routerLink="add-data/add-country" class="dropdown-item">Country</a></li>
+              <li> <a routerLink="add-data/add-region" class="dropdown-item">Region</a></li>
+              <li> <a routerLink="add-data/add-city" class="dropdown-item">City</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </nav>
+  <div class="container">
 
-  <router-outlet></router-outlet>
-  
-</div>
+
+    <router-outlet></router-outlet>
+
+  </div>
+</body>

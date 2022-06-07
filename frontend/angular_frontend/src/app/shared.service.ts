@@ -69,4 +69,13 @@ export class SharedService {
     return this.http.post(this.APIUrl + 'universities/',val);
   }
 
+  addCountry(val:any){
+    return this.http.post(this.APIUrl + 'countries/',val);
+  }
+  addRegion(val:any){
+    return this.http.post(this.APIUrl + 'regions/',val);
+  }
+  addCity(val:any){
+    return this.http.post(this.APIUrl + 'cities/',val);
+  }
 }
