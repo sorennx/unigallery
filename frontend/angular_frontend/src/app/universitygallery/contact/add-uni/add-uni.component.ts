@@ -60,28 +60,36 @@ export class AddUniComponent implements OnInit {
       this.CountryListNotFiltered = data;
 
     });
-    return 0;
+
   }
 
-  getRegionList() {
-    this.service.getRegionList().subscribe(data => {
-      this.RegionList = data;
-      this.RegionListNotFiltered = data;
+  async getRegionList() {
+    return new Promise<void>(resolve => {
+      this.service.getRegionList().subscribe(data => {
+        this.RegionList = data;
+        this.RegionListNotFiltered = data;
+        resolve();
+      })
     });
   }
 
-  getCityList() {
-    this.service.getCityList().subscribe(data => {
-      this.CityList = data;
-      this.CityListNotFiltered = data;
+  async getCityList() {
+    return new Promise<void>(resolve => {
+      this.service.getCityList().subscribe(data => {
+        this.CityList = data;
+        this.CityListNotFiltered = data;
+        resolve();
+      })
     });
   }
+
   delay(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
   async onCountrySelect() {
-    this.getRegionList();
-    await this.delay(100);
+
+    await this.getRegionList();
+
 
     var regionsFiltered = this.RegionListNotFiltered.filter((el: { CountryId: number; }) => {
       return el.CountryId == parseInt(this.Country);
@@ -90,8 +98,8 @@ export class AddUniComponent implements OnInit {
   }
 
   async onRegionSelect() {
-    this.getCityList();
-    await this.delay(100);
+    await this.getCityList();
+
 
     var citiesFiltered = this.CityListNotFiltered.filter((el: { RegionId: number; }) => {
       return el.RegionId == parseInt(this.Region);
@@ -101,6 +109,5 @@ export class AddUniComponent implements OnInit {
 
   async onCitySelect() {
     this.CityId = parseInt(this.City);
-    await this.delay(50);
   }
 }
