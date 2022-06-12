@@ -3,7 +3,7 @@
     <input [(ngModel)]="UniversityNameFilter" class="form-control text-bg-dark" (keyup)="FilterFn()" placeholder="University name">
     
 </div>
-<div class="input-group">
+<div class="input-group mb-4">
     <span class="input-group-text text-bg-dark">Country</span>
     <input [(ngModel)]="CountryNameFilter" class="form-control  text-bg-dark" (keyup)="FilterFn()" placeholder="Country">
     <span class="input-group-text text-bg-dark">Region</span>
@@ -11,7 +11,7 @@
     <span class="input-group-text text-bg-dark">City</span>
     <input [(ngModel)]="CityNameFilter" class="form-control  text-bg-dark" (keyup)="FilterFn()" placeholder="City">
 </div>
-<hr>
+
 
 <table *ngFor="let dataItem of universityList" class="table table-dark table-bordered">
     <tbody>
