@@ -19,6 +19,7 @@ import { AddUniComponent } from './universitygallery/contact/add-uni/add-uni.com
 import { AddOtherDataComponent } from './universitygallery/add-other-data/add-other-data.component';
 import { CountryComponent } from './universitygallery/add-other-data/country/country.component';
 import { CityComponent } from './universitygallery/add-other-data/city/city.component';
+import { FeedbackComponent } from './universitygallery/contact/feedback/feedback.component';
 
 
 
@@ -37,6 +38,7 @@ import { CityComponent } from './universitygallery/add-other-data/city/city.comp
     AddOtherDataComponent,
     CountryComponent,
     CityComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
