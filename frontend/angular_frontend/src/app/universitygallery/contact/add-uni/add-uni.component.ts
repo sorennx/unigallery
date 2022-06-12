@@ -40,7 +40,7 @@ export class AddUniComponent implements OnInit {
 
 
   addUniversity() {
-    var val = {
+    let val = {
       UniversityName: this.UniversityName,
       CityId: this.CityId,
       UniversityGeneralDescription: this.UniversityGeneralDescription,
@@ -49,7 +49,7 @@ export class AddUniComponent implements OnInit {
       UniversityCoursesLink: this.UniversityCoursesLink,
       UniversityContactInfo: this.UniversityContactInfo
     };
-
+    console.log(val);
     this.service.addUniversity(val).subscribe((res: { toString: () => any; }) => {
       alert(res.toString());
     })

@@ -1,4 +1,4 @@
-<div class="input-group mb-1 ">
+<div class="input-group mb-1 mt-2">
     <span class="input-group-text text-bg-dark">University name</span>
     <input [(ngModel)]="UniversityNameFilter" class="form-control text-bg-dark" (keyup)="FilterFn()" placeholder="University name">
     
@@ -16,20 +16,20 @@
 <table *ngFor="let dataItem of universityList" class="table table-dark table-bordered">
     <tbody>
         <tr>
-            <td><img src={{dataItem.UniversityLogoLink}} height="50" alt="University logo" /></td>
-            <td>{{dataItem.UniversityName }}</td>
-            <td>{{dataItem.UniversityMainPageLink}}</td>
-            <td>{{dataItem.UniversityCoursesLink}}</td>
+            <td><img src={{dataItem.UniversityLogoLink}} class="w-100" alt="University logo" /></td>
+            <td class="text-danger">{{dataItem.UniversityName }}</td>
+            <td><a href={{dataItem.UniversityMainPageLink}} class="link-danger">Main Page</a></td>
+            <td><a href={{dataItem.UniversityCoursesLink}} class="link-danger">Courses</a></td>
         </tr>
         <tr>
-            <td>{{ dataItem.CityId__RegionId__CountryId__CountryName }}</td>
+            <td class="text-danger">Country: {{ dataItem.CityId__RegionId__CountryId__CountryName }}</td>
             <td colspan="3" rowspan="2">{{dataItem.UniversityGeneralDescription}}</td>
         </tr>
         <tr>
-            <td>{{ dataItem.CityId__RegionId__RegionName }}</td>
+            <td class="text-danger">Region: {{ dataItem.CityId__RegionId__RegionName }}</td>
         </tr>
         <tr>
-            <td>{{ dataItem.CityId__CityName }}</td>
+            <td class="text-danger">City: {{ dataItem.CityId__CityName }}</td>
             <td colspan="3">{{dataItem.UniversityContactInfo}}</td>
         </tr>
         
