@@ -54,12 +54,15 @@ export class AddUniComponent implements OnInit {
       alert(res.toString());
     })
   }
-  getCountryList() {
-    this.service.getCountryList().subscribe(data => {
-      this.CountryList = data;
-      this.CountryListNotFiltered = data;
-
+  async getCountryList() {
+    return new Promise <void> (resolve => {
+      this.service.getCountryList().subscribe(data => {
+        this.CountryList = data;
+        this.CountryListNotFiltered = data;
+        resolve();
+      })
     });
+    
 
   }
 
@@ -83,9 +86,6 @@ export class AddUniComponent implements OnInit {
     });
   }
 
-  delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
   async onCountrySelect() {
 
     await this.getRegionList();

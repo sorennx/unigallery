@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/shared.service';
 export class CityComponent implements OnInit {
 
   constructor(private service: SharedService) { }
-  CityName: string ='';
+  CityName: string = '';
   Country: string = '';
   CountryList: any = [];
   CountryListNotFiltered: any = [];
@@ -19,40 +19,41 @@ export class CityComponent implements OnInit {
   RegionListFiltered: any = [];
 
   ngOnInit(): void {
-  this.getCountryList();
+    this.getCountryList();
   }
-  
-  addCity(){
-    let val = {CityName: this.CityName,
-               RegionId: parseInt(this.Region)}
+
+  addCity() {
+    let val = {
+      CityName: this.CityName,
+      RegionId: parseInt(this.Region)
+    }
     this.service.addCity(val).subscribe((res: { toString: () => any; }) => {
-       alert(res.toString()); })
-  }
-  getRegionList(){
-    this.service.getRegionList().subscribe((data) =>{
-      this.RegionListNotFiltered = data;
-      this.RegionList = data;
+      alert(res.toString());
     })
   }
-
-  getCountryList() {
-    this.service.getCountryList().subscribe(data => {
-      this.CountryList = data;
-      this.CountryListNotFiltered = data;
+  async getRegionList() {
+    return new Promise<void>(resolve => {
+      this.service.getRegionList().subscribe((data) => {
+        this.RegionListNotFiltered = data;
+        this.RegionList = data;
+        resolve();
+      })
     });
-    return 0;
   }
 
-  delay(ms: number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  async getCountryList() {
+    return new Promise<void>(resolve => {
+      this.service.getCountryList().subscribe(data => {
+        this.CountryList = data;
+        this.CountryListNotFiltered = data;
+        resolve();
+      })
+    });
   }
-  async onCountrySelect() {
-    this.getRegionList();
   
-    await this.delay(100);
-
-
-    var regionsFiltered = this.RegionListNotFiltered.filter((el: { CountryId: number; }) => {
+  async onCountrySelect() {
+    await this.getRegionList();
+    let regionsFiltered = this.RegionListNotFiltered.filter((el: { CountryId: number; }) => {
       return el.CountryId == parseInt(this.Country);
     });
     this.RegionListFiltered = regionsFiltered;
