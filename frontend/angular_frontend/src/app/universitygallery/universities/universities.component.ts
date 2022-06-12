@@ -33,15 +33,28 @@ export class UniversitiesComponent implements OnInit {
   }
 
   FilterFn() {
-    var CountryNameFilter = this.CountryNameFilter;
-    var UniversityNameFilter = this.UniversityNameFilter;
+    let CountryNameFilter = this.CountryNameFilter;
+    let UniversityNameFilter = this.UniversityNameFilter;
+    let CityNameFilter = this.CityNameFilter;
+    let RegionNameFilter = this.RegionNameFilter;
+    
 
-    this.universityList = this.UniversityListWithoutFilter.filter(function (el: { CityId__RegionId__CountryId__CountryName: { toString: () => string; }; UniversityName: { toString: () => string; }; }) {
+    this.universityList = this.UniversityListWithoutFilter.filter(function (el: {
+      CityId__RegionId__RegionName: any;
+      CityId__CityName: any;
+      CityId__RegionId__CountryId__CountryName: { toString: () => string; }; UniversityName: { toString: () => string; }; 
+}) {
       return el.CityId__RegionId__CountryId__CountryName.toString().toLowerCase().includes(
         CountryNameFilter.toString().trim().toLowerCase()
       ) &&
         el.UniversityName.toString().toLowerCase().includes(
           UniversityNameFilter.toString().trim().toLowerCase()
+        )&&
+        el.CityId__RegionId__RegionName.toString().toLowerCase().includes(
+          RegionNameFilter.toString().trim().toLowerCase()
+        )&&
+        el.CityId__CityName.toString().toLowerCase().includes(
+          CityNameFilter.toString().trim().toLowerCase()
         )
     });
   }

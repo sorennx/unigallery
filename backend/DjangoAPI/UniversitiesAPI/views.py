@@ -94,7 +94,7 @@ def universityGalleryApi(request):
         # for u in universities:
         #     print(u.UniversityName,u.CityId.CityName,u.CityId.RegionId.RegionName)
         # data = serializers.serialize('json',universities, fields=['UniversityName','CityId','CityId.CityName'])
-        data = list(universities.values('UniversityName','CityId__CityName','CityId__RegionId__RegionName','CityId__RegionId__CountryId__CountryName'))
+        data = list(universities.values('UniversityName','CityId__CityName','CityId__RegionId__RegionName','CityId__RegionId__CountryId__CountryName','UniversityGeneralDescription','UniversityLogoLink','UniversityMainPageLink','UniversityCoursesLink','UniversityContactInfo'))
         # universities_serializer = UniversitySerializer(universities, many=True)
         return JsonResponse(data, safe=False)
     elif request.method == 'POST':

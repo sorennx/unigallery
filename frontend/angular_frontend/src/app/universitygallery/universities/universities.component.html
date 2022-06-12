@@ -1,32 +1,36 @@
-<table class="table table-striped">
+<div class="input-group mb-1 ">
+    <span class="input-group-text text-bg-dark">University name</span>
+    <input [(ngModel)]="UniversityNameFilter" class="form-control text-bg-dark" (keyup)="FilterFn()" placeholder="University name">
+    
+</div>
+<div class="input-group">
+    <span class="input-group-text text-bg-dark">Country</span>
+    <input [(ngModel)]="CountryNameFilter" class="form-control  text-bg-dark" (keyup)="FilterFn()" placeholder="Country">
+    <span class="input-group-text text-bg-dark">Region</span>
+    <input [(ngModel)]="RegionNameFilter" class="form-control  text-bg-dark" (keyup)="FilterFn()" placeholder="Region">
+    <span class="input-group-text text-bg-dark">City</span>
+    <input [(ngModel)]="CityNameFilter" class="form-control  text-bg-dark" (keyup)="FilterFn()" placeholder="City">
+</div>
+<hr>
 
-    <thead>
-        <tr>
-            <td>
-                <div class="d-flex flex-row">
-                    <input [(ngModel)] = "UniversityNameFilter" class="form-control"
-                    (keyup)="FilterFn()" placeholder="University name">
-                </div>
-                University name</td>
-            <td>City name</td>
-            <td>Region name</td>
-            <td>
-                <div class="d-flex flex-row">
-                    <input [(ngModel)] = "CountryNameFilter" class="form-control"
-                    (keyup)="FilterFn()" placeholder="Country name">
-                </div>
-                Country name</td>
-        </tr>
-    </thead>
-
+<table *ngFor="let dataItem of universityList" class="table table-dark table-bordered">
     <tbody>
-        <tr *ngFor="let dataItem of universityList">
-            <!-- angular directive for a loop. loops through the list of countries and displays them in a table-->
-            <td>{{ dataItem.UniversityName }}</td>
-            <td>{{ dataItem.CityId__CityName }}</td>
-            <td>{{ dataItem.CityId__RegionId__RegionName }}</td>
-            <td>{{ dataItem.CityId__RegionId__CountryId__CountryName }}</td>
+        <tr>
+            <td><img src={{dataItem.UniversityLogoLink}} height="50" alt="University logo" /></td>
+            <td>{{dataItem.UniversityName }}</td>
+            <td>{{dataItem.UniversityMainPageLink}}</td>
+            <td>{{dataItem.UniversityCoursesLink}}</td>
         </tr>
-    </tbody>
-
+        <tr>
+            <td>{{ dataItem.CityId__RegionId__CountryId__CountryName }}</td>
+            <td colspan="3" rowspan="2">{{dataItem.UniversityGeneralDescription}}</td>
+        </tr>
+        <tr>
+            <td>{{ dataItem.CityId__RegionId__RegionName }}</td>
+        </tr>
+        <tr>
+            <td>{{ dataItem.CityId__CityName }}</td>
+            <td colspan="3">{{dataItem.UniversityContactInfo}}</td>
+        </tr>
+        
 </table>
