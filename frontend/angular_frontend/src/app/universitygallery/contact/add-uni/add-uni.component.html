@@ -3,14 +3,16 @@
     <div class="col-sm-10">
         <select class="form-control" [(ngModel)]="Country" (change)="onCountrySelect()">
             <option value="">--Select--</option>
-            <option *ngFor="let dataItem of CountryList" [ngValue]="dataItem.CountryId" >{{dataItem.CountryName}}</option>
+            <option *ngFor="let dataItem of CountryList" [ngValue]="dataItem.CountryId">{{dataItem.CountryName}}
+            </option>
         </select>
     </div>
     <label class="col-sd-2 col-form-label">Region</label>
     <div class="col-sm-10">
         <select class="form-control" [(ngModel)]="Region" (change)="onRegionSelect()">
             <option value="" selected disabled hidden>--Select--</option>
-            <option *ngFor="let dataItem of RegionListFiltered" [ngValue]="dataItem.RegionId">{{dataItem.RegionName}}</option>
+            <option *ngFor="let dataItem of RegionListFiltered" [ngValue]="dataItem.RegionId">{{dataItem.RegionName}}
+            </option>
         </select>
     </div>
     <label class="col-sd-2 col-form-label">City</label>
@@ -27,35 +29,40 @@
 
     <label class="col-sd-2 col-form-label">University General Description</label>
     <div class="col-sm-10">
-        <textarea class="form-control" maxlength="3000" [(ngModel)]="UniversityGeneralDescription" placeholder="Enter University General Description"> </textarea>
+        <textarea class="form-control" maxlength="3000" [(ngModel)]="UniversityGeneralDescription"
+            placeholder="Enter University General Description"> </textarea>
     </div>
 
     <label class="col-sd-2 col-form-label">University Contact Info </label>
     <div class="col-sm-10">
-        <textarea class="form-control" maxlength="1000" [(ngModel)]="UniversityContactInfo" placeholder="Enter University Name"> </textarea>
+        <textarea class="form-control" maxlength="1000" [(ngModel)]="UniversityContactInfo"
+            placeholder="Enter University Contact info"> </textarea>
     </div>
 
     <label class="col-sd-2 col-form-label">University Logo Link</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="UniversityLogoLink" placeholder="Enter University Name">
+        <input type="text" class="form-control" [(ngModel)]="UniversityLogoLink"
+            placeholder="Enter University Logo Link">
     </div>
 
     <label class="col-sd-2 col-form-label">University Main Page Link</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="UniversityMainPageLink" placeholder="Enter University Name">
+        <input type="text" class="form-control" [(ngModel)]="UniversityMainPageLink"
+            placeholder="Enter University Main Page Link">
     </div>
 
     <label class="col-sd-2 col-form-label">University Courses Link</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)]="UniversityCoursesLink" placeholder="Enter University Name">
+        <input type="text" class="form-control" [(ngModel)]="UniversityCoursesLink"
+            placeholder="Enter University Courses Link">
     </div>
 
 
-    
-    
+
+
     <br>&nbsp;
     <hr>
-    <button (click)="addUniversity()" class="btn btn-primary">Add University</button>
+    <button (click)="addUniversity()" class="btn btn-dark">Add University</button>
 
-    
+
 </div>

@@ -1,91 +1,91 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <h4>You are a representant of your university and you are not on our list?</h4>
 <h6>
-    Say no more! We're here for you. </h6>
+  Say no more! We're here for you. </h6>
 <p>Here's a short form for you to fill and your university will be added promptly to our database!</p>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Add university now!
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a university</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          
-        </div>
-        
-        <div class="modal-body">
-          <app-add-uni></app-add-uni>
-        </div>
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add university now!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add a university</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+
+      <div class="modal-body">
+        <app-add-uni></app-add-uni>
       </div>
     </div>
   </div>
+</div>
 
 
 
 
 <hr>
 <style>
-  li{
-      list-style:none;
+  li {
+    list-style: none;
   }
+
   /* Style all font awesome icons */
   .fa {
-      padding: 40px;
-      font-size: 30px;
-      width: 50px;
-      text-align: center;
-      text-decoration: none;
-      margin: 5px 2px;
+    padding: 40px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
   }
 
   .fa:hover {
-      opacity: 0.7;
+    opacity: 0.7;
   }
 
   /* Set a specific color for each brand */
 
   .fa-facebook {
-      background: #3B5998;
-      color: white;
+    background: #3B5998;
+    color: white;
   }
 
   .fa-twitter {
-      background: #55ACEE;
-      color: white;
+    background: #55ACEE;
+    color: white;
   }
 
   .fa-google {
-      background: #dd4b39;
-      color: white;
+    background: #dd4b39;
+    color: white;
   }
 
   .fa-instagram {
-background: #125688;
-color: white;
-}
+    background: #125688;
+    color: white;
+  }
 </style>
 <h4>Something else troubling your mind ?</h4>
 Feel free to reach out using one of the following methods:
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <ul class="icons">
-    <li ><a href="#"><span class="fab fa-facebook"></span></a>&nbsp;Facebook</li>
-    <li ><a href="#"><span class="fab fa-twitter"></span></a>&nbsp;Twitter</li>
-    <li ><a href="#"><span class="fab fa-instagram"></span></a>&nbsp;Instagram</li>
+  <li><a href="https://www.facebook.com/" target="_blank"><span class="fab fa-facebook"></span>&nbsp;Facebook</a></li>
+  <li><a href="https://twitter.com/" target="_blank"><span class="fab fa-twitter"></span>&nbsp;Twitter</a></li>
+  <li><a href="https://www.instagram.com/" target="_blank"><span class="fab fa-instagram"></span>&nbsp;Instagram</a>
+  </li>
 
 </ul>
 
-Or leave a feedback here: <br>
-
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#feedbackModal">
-  Feedback
+<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+  Or leave a feedback here
 </button>
 
 <!-- Modal -->
@@ -95,9 +95,9 @@ Or leave a feedback here: <br>
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add a university</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        
+
       </div>
-      
+
       <div class="modal-body">
         <app-feedback></app-feedback>
       </div>
